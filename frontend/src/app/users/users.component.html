@@ -1,0 +1,70 @@
+<!-- <div class="users-overview">
+  <p>
+    This section should show the list of (dummy) users from the API.<br />
+    For this you will need to do the following:
+  </p>
+  <div class="title">
+    Backend (do-it-api)
+  </div>
+  <ul>
+    <li>Expose a list of 5 fake users with random data</li>
+    <li>Use best (REST) practices as much as possible but don't over do it (e.g. no real database!)</li>
+    <li>Implement this as you would in a real world project</li>
+  </ul>
+  <div class="title">
+    Frontend (this project)
+  </div>
+  <ul>
+    <li>replace this view with the list of 5 fake users</li>
+    <li>e.g. call the API to get this list</li>
+  </ul>
+  <div class="title">
+    General Tips
+  </div>
+  <ul>
+    <li>Don't overthink</li>
+    <li>Keep it simple</li>
+    <li>Don't repeat yourself</li>
+    <li>Use best practices</li>
+    <li>Don't spend more than 2-3 hours on this (timebox it)</li>
+    <li>Showcase what you can</li>
+    <li>Good luck!</li>
+  </ul>
+</div> -->
+
+<div>
+  <table mat-table [dataSource]="users" class="mat-elevation-z8">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let user">{{ user.name }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef>Lastname</th>
+      <td mat-cell *matCellDef="let user">{{ user.lastName }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <th mat-header-cell *matHeaderCellDef>Address</th>
+      <td mat-cell *matCellDef="let user">{{ user.address }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="postalCode">
+      <th mat-header-cell *matHeaderCellDef>Postal Code</th>
+      <td mat-cell *matCellDef="let user">{{ user.postalCode }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="country">
+      <th mat-header-cell *matHeaderCellDef>Country</th>
+      <td mat-cell *matCellDef="let user">{{ user.country }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="personalGreeting">
+      <th mat-header-cell *matHeaderCellDef>Personal Greeting</th>
+      <td mat-cell *matCellDef="let user">{{ user.personalGreeting }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
